@@ -1,18 +1,20 @@
 import speech_recognition as srec
 from gtts import gTTS
 import os
+import pyaudio
 
 def perintah():
     mendengar = srec.Recognizer()
     with srec.Microphone() as source:
         print('Mendengarkan....')
-        suara = mendengar.listen(source,phrase_time_limit=5)
+        suara = mendengar.listen(source,phrase_time_limit=3)
         try: 
             print('Diterima...')
             dengar = mendengar.recognize_google(suara, language='id-ID')
             print(dengar)
-        except: 
-            pass
+        except Exception as e: 
+            print(f"Error: {e}")
+            dengar = "Tidak bisa mendengar dengan jelas."
         return dengar
 
 def ngomong(self):
@@ -27,7 +29,7 @@ def ngomong(self):
 
 def run_michelle():
     Layanan = perintah()
-    #print(Layanan)
+    print(Layanan)
     ngomong(Layanan)
 
 run_michelle()

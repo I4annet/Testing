@@ -44,7 +44,7 @@ public class DigitalClock extends JFrame {
         panel.add(timeLabel, BorderLayout.CENTER);
         panel.add(dateLabel, BorderLayout.SOUTH);
 
-        panel.setBackground(Color.BLUE);
+        panel.setBackground(Color.BLACK);
 
         add(panel);
 
